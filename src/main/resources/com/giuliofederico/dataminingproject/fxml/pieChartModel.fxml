@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="387.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.giuliofederico.dataminingproject.controller.PieChartController">
+   <children>
+      <PieChart fx:id="pieChart" layoutX="225.0" layoutY="-1.0" prefHeight="366.0" prefWidth="441.0" />
+      <Text layoutX="718.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reliability">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <Text fx:id="percentageReliabilityClusteringLabel" fill="#ff6900" layoutX="747.0" layoutY="149.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="40%">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Text>
+   </children>
+</Pane>

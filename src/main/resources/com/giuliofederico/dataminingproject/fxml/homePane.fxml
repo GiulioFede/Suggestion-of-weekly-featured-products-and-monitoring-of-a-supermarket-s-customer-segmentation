@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.BoxBlur?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane fx:id="homePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="900.0" stylesheets="@../others/graphics.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.giuliofederico.dataminingproject.controller.HomePaneController">
+   <children>
+      <Pane fx:id="menuPane" prefHeight="494.0" prefWidth="900.0" style="-fx-background-color: white;">
+         <children>
+            <ImageView fitHeight="967.0" fitWidth="657.0" layoutX="109.0" layoutY="-300.0" pickOnBounds="true" rotate="270.0">
+               <image>
+                  <Image url="@../image/backgroundHome.jpg" />
+               </image>
+               <effect>
+                  <BoxBlur height="48.57" iterations="3" width="45.54" />
+               </effect>
+            </ImageView>
+            <Pane fx:id="menuBasketAnalysisArea" layoutX="129.0" layoutY="108.0" prefHeight="272.0" prefWidth="200.0">
+               <children>
+                  <Pane fx:id="menuBasketAnalysisButton" layoutX="1.0" layoutY="11.0" onMouseClicked="#openBasketAnalysisPane" styleClass="menuButton" stylesheets="@../others/graphics.css">
+                     <children>
+                        <Circle fill="WHITE" layoutX="97.0" layoutY="91.0" radius="87.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+                        <ImageView fitHeight="104.0" fitWidth="197.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/iconBasketAnalysis.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Text fill="WHITE" layoutX="10.0" layoutY="237.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="suggestion of featured products" textAlignment="CENTER" wrappingWidth="200.0">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+            <Pane fx:id="menuClusteringAnalysisButton" layoutX="605.0" layoutY="119.0" onMouseClicked="#openClusteringAnalysisPane" styleClass="menuButton" stylesheets="@../others/graphics.css">
+               <children>
+                  <Circle fill="WHITE" layoutX="97.0" layoutY="91.0" radius="87.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+                  <ImageView fitHeight="178.0" fitWidth="149.0" layoutX="19.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/people.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Text fill="WHITE" layoutX="603.0" layoutY="339.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="cluster  your customers" textAlignment="CENTER" wrappingWidth="200.0">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <Pane fx:id="basketAnalysisPane" prefHeight="497.0" prefWidth="900.0" style="-fx-background-color: white;">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f8f8f8" height="118.0" layoutY="376.0" stroke="TRANSPARENT" strokeType="INSIDE" width="900.0" />
+            <ImageView fitHeight="30.0" fitWidth="33.0" layoutX="5.0" layoutY="8.0" onMouseClicked="#closeBasketAnalysisPane" pickOnBounds="true" preserveRatio="true" rotate="180.0">
+               <image>
+                  <Image url="@../image/arrowIcon.png" />
+               </image>
+            </ImageView>
+            <Text layoutX="39.0" layoutY="424.0" strokeType="OUTSIDE" strokeWidth="0.0" text="How many suggestions do you want to receive at most?" wrappingWidth="352.13671875">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <TextField fx:id="textFieldNumberOfSuggestions" alignment="CENTER" layoutX="140.0" layoutY="440.0" promptText="max 10 suggestions" style="-fx-background-color: white;" />
+            <Text layoutX="489.0" layoutY="424.0" strokeType="OUTSIDE" strokeWidth="0.0" text="How likely would you like the suggestions be?" textAlignment="CENTER" wrappingWidth="352.13671875">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <TextField fx:id="textFieldConfidence" alignment="CENTER" layoutX="593.0" layoutY="440.0" promptText="choose between 0 and 1" style="-fx-background-color: white;" />
+            <Text layoutX="1.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Weekly suggestions for featured products" textAlignment="CENTER" wrappingWidth="900.0">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Text>
+            <Button layoutX="780.0" layoutY="461.0" mnemonicParsing="false" onMouseClicked="#loadWeeklySuggestions" style="-fx-background-color: #0090ff;" text="load suggestions" textFill="WHITE" />
+            <ScrollPane layoutX="-7.0" layoutY="73.0" prefHeight="304.0" prefWidth="908.0" style="-fx-background-color: transparent; -fx-hbar-policy: never; -fx-vbar-policy: never;">
+               <content>
+                  <VBox fx:id="boxSuggestions" prefHeight="303.0" prefWidth="900.0" style="-fx-background-color: transparent;" />
+               </content>
+            </ScrollPane>
+            <ProgressIndicator fx:id="progressIndicatorBasketAnalysis" layoutX="430.0" layoutY="228.0" prefHeight="45.0" prefWidth="42.0" visible="false" />
+         </children>
+      </Pane>
+      <Pane fx:id="clusteringAnalysisPane" layoutY="-4.0" prefHeight="500.0" prefWidth="900.0" style="-fx-background-color: white;" visible="false">
+         <children>
+            <Text layoutX="-7.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Clustering your customers" textAlignment="CENTER" wrappingWidth="900.0">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Text>
+            <ScrollPane layoutX="-7.0" layoutY="73.0" prefHeight="373.0" prefWidth="908.0" style="-fx-background-color: transparent; -fx-hbar-policy: never; -fx-vbar-policy: never;">
+               <content>
+                  <VBox fx:id="boxDetails" prefHeight="373.0" prefWidth="900.0" style="-fx-background-color: transparent;" />
+               </content>
+            </ScrollPane>
+            <ImageView fitHeight="30.0" fitWidth="33.0" layoutX="5.0" layoutY="8.0" onMouseClicked="#closeClusteringAnalysisPane" pickOnBounds="true" preserveRatio="true" rotate="180.0">
+               <image>
+                  <Image url="@../image/arrowIcon.png" />
+               </image>
+            </ImageView>
+            <Pane layoutX="1.0" layoutY="425.0" prefHeight="82.0" prefWidth="775.0">
+               <children>
+                  <Text fx:id="scrollTextLabel" layoutX="1.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="scroll down to know other details" textAlignment="CENTER" wrappingWidth="897.921875" />
+                  <ImageView fx:id="scrollImage" fitHeight="32.0" fitWidth="94.0" layoutX="434.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
+                     <image>
+                        <Image url="@../image/arrowIcon.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <ProgressIndicator fx:id="progressIndicatorClusteringAnalysis" layoutX="10.0" layoutY="457.0" prefHeight="32.0" prefWidth="32.0" visible="false" />
+            <Button fx:id="startClusteringButton" layoutX="791.0" layoutY="461.0" mnemonicParsing="false" onMouseClicked="#startClustering" style="-fx-background-color: #00e208;" text="start clustering" textFill="WHITE" />
+         </children>
+      </Pane>
+   </children>
+</Pane>

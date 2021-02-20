@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="387.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.giuliofederico.dataminingproject.controller.BarChartController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="5.0" stroke="TRANSPARENT" strokeType="INSIDE" width="900.0" />
+      <Text fx:id="titleWindow" layoutX="20.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Title" wrappingWidth="890.13671875">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Text>
+      <BarChart fx:id="barChart" layoutY="63.0" prefHeight="318.0" prefWidth="900.0">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+      </BarChart>
+   </children>
+</Pane>
